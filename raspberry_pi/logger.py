@@ -6,6 +6,7 @@ import json
 import csv
 import time
 import mimetypes
+import hashlib
 import urllib.request
 import urllib.parse
 import smtplib
@@ -421,7 +422,7 @@ def fetch_server_backup(target_date: str) -> Tuple[List[Dict[str, Any]], str]:
 
 def verify_dataset_match(local_data: List[Dict[str, Any]], server_data: List[Dict[str, Any]]) -> Tuple[bool, str]:
     """
-    Compares two lists of dictionaries.
+    Compares two lists of dictionaries by generating SHA-256 hashes of their contents.
     Returns a tuple: (Match Boolean, Error Message String or None)
     """
     if len(local_data) != len(server_data) or len(local_data) == 0:
@@ -430,9 +431,17 @@ def verify_dataset_match(local_data: List[Dict[str, Any]], server_data: List[Dic
         return False, err_msg
         
     try:
-        local_set = set(json.dumps(d, sort_keys=True) for d in local_data)
-        server_set = set(json.dumps(d, sort_keys=True) for d in server_data)
+        # Convert dict to JSON -> Encode to bytes -> Hash with SHA-256 -> Get Hex String
+        local_set = set(
+            hashlib.sha256(json.dumps(d, sort_keys=True).encode('utf-8')).hexdigest() 
+            for d in local_data
+        )
+        server_set = set(
+            hashlib.sha256(json.dumps(d, sort_keys=True).encode('utf-8')).hexdigest() 
+            for d in server_data
+        )
         
+        # Sets are inherently order-independent
         if local_set == server_set:
             return True, None
         else:
