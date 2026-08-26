@@ -1,0 +1,11 @@
+# Python Standard Libraries (No installation required)
+# os, json, datetime, time, queue, threading, signal, sys, sqlite3, logging, math, hmac
+
+# Third-Party Dependencies
+pyserial==3.5
+requests==2.31.0
+Flask==3.0.0
+Werkzeug==3.0.1
+
+# Raspberry Pi Hardware Specific
+RPi.GPIO==0.7.1
