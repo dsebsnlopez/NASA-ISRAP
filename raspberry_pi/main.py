@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import time
 import logging
 import threading
@@ -39,7 +38,7 @@ class AppConductor:
 
         #4. Wait 10 seconds before triggering th enext synchornized poll
         time.sleep(config.PURPLEAIR_POLL_INTERVAL)
-=======
+
 import time
 import logging
 import threading
@@ -80,4 +79,3 @@ class AppConductor:
 
         #4. Wait 10 seconds before triggering th enext synchornized poll
         time.sleep(config.PURPLEAIR_POLL_INTERVAL)
->>>>>>> 5df0bff0bf7b1abe9ffa39e79bf6ac0a9ac136df
