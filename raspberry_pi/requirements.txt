@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Python Standard Libraries (No installation required)
 # os, json, datetime, time, queue, threading, signal, sys, sqlite3, logging, math, hmac
 
@@ -8,4 +9,16 @@ Flask==3.0.0
 Werkzeug==3.0.1
 
 # Raspberry Pi Hardware Specific
+=======
+# Python Standard Libraries (No installation required)
+# os, json, datetime, time, queue, threading, signal, sys, sqlite3, logging, math, hmac
+
+# Third-Party Dependencies
+pyserial==3.5
+requests==2.31.0
+Flask==3.0.0
+Werkzeug==3.0.1
+
+# Raspberry Pi Hardware Specific
+>>>>>>> 5df0bff0bf7b1abe9ffa39e79bf6ac0a9ac136df
 RPi.GPIO==0.7.1

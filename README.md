@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # IRAM ISRAP Environmental Sensor Pipeline
 
 This application runs on a Raspberry Pi 5 to collect, store, and upload environmental data from an Arduino and a PurpleAir sensor.
@@ -29,3 +30,6 @@ Once the PurpleAir sensor connects, find its IP (usually starting with 10.42.0.x
 
 4.Environment Variables:
 Create a .env file or export secrets before running. Do NOT hardcode passwords or API keys in config.py.
+=======
+# NASA-ISRAP
+>>>>>>> 5df0bff0bf7b1abe9ffa39e79bf6ac0a9ac136df
